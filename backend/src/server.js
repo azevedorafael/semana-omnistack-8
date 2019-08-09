@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const routes = require('./routes');
 
@@ -9,6 +10,7 @@ mongoose.connect('mongodb+srv://omstack8:omstack8@cluster0-gzwkz.mongodb.net/oms
     {useNewUrlParser : true}
 );
 
+server.use(cors());
 server.use(express.json());
 server.use(routes);
 
